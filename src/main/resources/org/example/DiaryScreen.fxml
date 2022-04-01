@@ -13,8 +13,9 @@
 
 <AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.MainScreenController">
         <ToolBar layoutY="2.0" prefHeight="40.0" prefWidth="700.0">
-
-        </ToolBar>
+      <items>
+         <Button mnemonicParsing="false" onAction="#switchToMainScreen" prefHeight="25.0" prefWidth="59.0" text="Home" />
+      </items></ToolBar>
         <Label layoutX="283.0" layoutY="62.0" text="My diary">
             <font>
                 <Font size="30.0" />
@@ -32,5 +33,5 @@
         <Label layoutX="517.0" layoutY="123.0" prefHeight="17.0" prefWidth="109.0" text="Notes:" />
         <Text layoutX="34.0" layoutY="263.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Note: There are 12 pages for you to record your plant's progress in MyDiary up to 12 months!" textAlignment="JUSTIFY" wrappingWidth="109.0">
         </Text>
-        <Button layoutX="14.0" layoutY="461.0" mnemonicParsing="false" onAction="#switchToUploadPhotoScreen" prefHeight="25.0" prefWidth="109.0" text="My schedule" />
+        <Button layoutX="34.0" layoutY="455.0" mnemonicParsing="false" onAction="#switchToScheduleScreen" prefHeight="25.0" prefWidth="109.0" text="My schedule" />
 </AnchorPane>

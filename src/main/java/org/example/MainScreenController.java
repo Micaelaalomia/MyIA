@@ -8,9 +8,6 @@ import javafx.scene.control.Button;
 
 public class MainScreenController {
 
-
-
-
     public void switchToScheduleScreen(ActionEvent actionEvent) throws IOException {
        App.setRoot("ScheduleScreen");
     }
@@ -25,5 +22,9 @@ public class MainScreenController {
 
     public void switchToMainScreen(ActionEvent actionEvent) throws IOException {
         App.setRoot("MainScreen");
+    }
+
+    public void switchToAddPlantScreen(ActionEvent actionEvent) throws IOException {
+        App.setRoot("AddPlant");
     }
 }

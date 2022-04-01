@@ -12,4 +12,8 @@ public class ScheduleScreenController {
     public void switchToDiaryScreen(ActionEvent actionEvent) throws IOException {
         App.setRoot("DiaryScreen");
     }
+
+    public void switchToMainScreen(ActionEvent actionEvent) throws IOException {
+        App.setRoot("MainScreen");
+    }
 }

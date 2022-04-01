@@ -9,7 +9,6 @@
 
 <AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.MainScreenController">
 
-    <children>
         <Button layoutX="403.0" layoutY="269.0" mnemonicParsing="false" onAction="#switchToScheduleScreen" prefHeight="25.0" prefWidth="109.0" text="My schedule" />
         <Label layoutX="202.0" layoutY="178.0" text="Welcome">
             <font>
@@ -25,5 +24,4 @@
             <Font size="30.0" />
          </font>
       </Label>
-    </children>
 </AnchorPane>
