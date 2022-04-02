@@ -8,29 +8,82 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.MainScreenController">
-        <ToolBar layoutY="2.0" prefHeight="40.0" prefWidth="700.0">
-
-        </ToolBar>
-        <Label layoutX="283.0" layoutY="62.0" text="My diary">
-            <font>
-                <Font size="30.0" />
-            </font>
-        </Label>
-        <Button layoutX="34.0" layoutY="205.0" mnemonicParsing="false" onAction="#switchToUploadPhotoScreen" prefHeight="25.0" prefWidth="109.0" text="Upload a photo" />
-        <MenuButton layoutX="34.0" layoutY="164.0" mnemonicParsing="false" prefWidth="109.0" text="Select plant">
-            <items>
-                <MenuItem mnemonicParsing="false" text="Action 1" />
-                <MenuItem mnemonicParsing="false" text="Action 2" />
-            </items>
-        </MenuButton>
-        <Pagination layoutX="158.0" layoutY="107.0" prefHeight="336.0" prefWidth="355.0" />
-        <TextArea layoutX="517.0" layoutY="140.0" prefHeight="286.0" prefWidth="158.0" text="Write here..." />
-        <Label layoutX="517.0" layoutY="123.0" prefHeight="17.0" prefWidth="109.0" text="Notes:" />
-        <Text layoutX="34.0" layoutY="263.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Note: There are 12 pages for you to record your plant's progress in MyDiary up to 12 months!" textAlignment="JUSTIFY" wrappingWidth="109.0">
-        </Text>
-        <Button layoutX="14.0" layoutY="461.0" mnemonicParsing="false" onAction="#switchToUploadPhotoScreen" prefHeight="25.0" prefWidth="109.0" text="My schedule" />
+<AnchorPane prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.MainScreenController">
+    <Pagination layoutX="239.0" layoutY="115.0" prefHeight="311.0" prefWidth="355.0" />
+   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c6c7c9" height="110.0" layoutX="259.0" layoutY="257.0" stroke="#c6c7c9" strokeType="INSIDE" width="142.0" />
+   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f2efef" height="228.0" layoutX="22.0" layoutY="229.0" stroke="#dddada" strokeType="INSIDE" width="210.0" />
+    <ToolBar layoutY="1.0" prefHeight="40.0" prefWidth="800.0">
+      <items>
+         <Button mnemonicParsing="false" onAction="#switchToMainScreen" prefHeight="25.0" prefWidth="59.0" text="Home" />
+      </items></ToolBar>
+    <Label layoutX="351.0" layoutY="73.0" text="My diary">
+        <font>
+            <Font name="Consolas" size="30.0" />
+        </font>
+    </Label>
+    <MenuButton layoutX="28.0" layoutY="133.0" mnemonicParsing="false" prefWidth="109.0" text="Select plant">
+        <items>
+            <MenuItem mnemonicParsing="false" text="Plant 1" />
+            <MenuItem mnemonicParsing="false" text="Plant 2" />
+            <MenuItem mnemonicParsing="false" text="Plant 3" />
+            <MenuItem mnemonicParsing="false" text="Plant 4" />
+            <MenuItem mnemonicParsing="false" text="Plant 5" />
+        </items>
+    </MenuButton>
+    <TextArea layoutX="612.0" layoutY="144.0" prefHeight="254.0" prefWidth="158.0" text="Write here..." />
+    <Label layoutX="612.0" layoutY="123.0" prefHeight="17.0" prefWidth="109.0" text="Notes:" />
+    <Text fill="#323232" layoutX="261.0" layoutY="443.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Note: There are 12 pages for you to record your plant's progress in MyDiary up to 12 months!" textAlignment="CENTER" wrappingWidth="312.0">
+      <font>
+         <Font name="System Italic" size="12.0" />
+      </font></Text>
+    <Button layoutX="28.0" layoutY="168.0" mnemonicParsing="false" onAction="#switchToScheduleScreen" prefHeight="25.0" prefWidth="109.0" text="My schedule" />
+    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c6c7c9" height="110.0" layoutX="424.0" layoutY="257.0" stroke="#c6c7c9" strokeType="INSIDE" width="142.0" />
+    <Label layoutX="313.0" layoutY="304.0" prefHeight="17.0" prefWidth="59.0" text="Image" textFill="#6f6d6d">
+        <font>
+            <Font name="System Italic" size="12.0" />
+        </font>
+    </Label>
+    <Label layoutX="478.0" layoutY="304.0" prefHeight="17.0" prefWidth="59.0" text="Image" textFill="#6f6d6d">
+        <font>
+            <Font name="System Italic" size="12.0" />
+        </font>
+    </Label>
+   <Label layoutX="36.0" layoutY="308.0" prefHeight="17.0" prefWidth="142.0" text="Open file from device" />
+   <Button layoutX="157.0" layoutY="304.0" minWidth="55.0" mnemonicParsing="false" prefHeight="25.0" text="Select" />
+   <Label layoutX="35.0" layoutY="276.0" prefHeight="17.0" prefWidth="210.0" text="Please select a JPG / PNG file only.">
+      <font>
+         <Font name="System Italic" size="12.0" />
+      </font>
+   </Label>
+   <Label layoutX="36.0" layoutY="248.0" text="Upload a photo">
+      <font>
+         <Font name="Consolas" size="20.0" />
+      </font>
+   </Label>
+   <MenuButton layoutX="36.0" layoutY="343.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="132.0" text="Add image to: ">
+     <items>
+       <MenuItem mnemonicParsing="false" text="Frame 1" />
+       <MenuItem mnemonicParsing="false" text="Frame 2" />
+         <MenuItem mnemonicParsing="false" text="Frame 3" />
+         <MenuItem mnemonicParsing="false" text="Frame 4" />
+     </items>
+   </MenuButton>
+   <Button defaultButton="true" layoutX="155.0" layoutY="405.0" mnemonicParsing="false" onAction="#switchToDiaryScreen" prefHeight="25.0" prefWidth="55.0" text="Save" />
+   <Button cancelButton="true" layoutX="94.0" layoutY="405.0" mnemonicParsing="false" onAction="#switchToDiaryScreen" prefHeight="25.0" prefWidth="55.0" text="Cancel" />
+   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c6c7c9" height="110.0" layoutX="258.0" layoutY="129.0" stroke="#c6c7c9" strokeType="INSIDE" width="142.0" />
+   <Label layoutX="312.0" layoutY="176.0" prefHeight="17.0" prefWidth="59.0" text="Image" textFill="#6f6d6d">
+      <font>
+         <Font name="System Italic" size="12.0" />
+      </font>
+   </Label>
+   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c6c7c9" height="110.0" layoutX="424.0" layoutY="130.0" stroke="#c6c7c9" strokeType="INSIDE" width="142.0" />
+   <Label layoutX="478.0" layoutY="177.0" prefHeight="17.0" prefWidth="59.0" text="Image" textFill="#6f6d6d">
+      <font>
+         <Font name="System Italic" size="12.0" />
+      </font>
+   </Label>
 </AnchorPane>
