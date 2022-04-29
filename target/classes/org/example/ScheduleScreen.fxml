@@ -10,27 +10,27 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ScheduleScreenController">
-      <ToolBar prefHeight="45.0" prefWidth="703.0" />
-      <Label layoutX="268.0" layoutY="67.0" text="My schedule">
+<AnchorPane prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ScheduleScreenController">
+      <ToolBar prefHeight="40.0" prefWidth="800.0" />
+      <Label layoutX="317.0" layoutY="68.0" text="My schedule">
          <font>
-            <Font size="30.0" />
+            <Font name="Yu Gothic Medium" size="30.0" />
          </font>
       </Label>
       <Button layoutX="14.0" layoutY="461.0" mnemonicParsing="false" onAction="#switchToDiaryScreen" prefHeight="25.0" prefWidth="109.0" text="My diary" />
-      <Label layoutX="553.0" layoutY="124.0" prefHeight="17.0" prefWidth="134.0" text="Notifications" />
-   <ListView layoutX="553.0" layoutY="148.0" prefHeight="224.0" prefWidth="128.0" />
-   <Label layoutX="553.0" layoutY="393.0" prefHeight="17.0" prefWidth="134.0" text="Next reminder:" />
-   <Spinner layoutX="554.0" layoutY="416.0" prefHeight="25.0" prefWidth="128.0" />
-   <TableView layoutX="21.0" layoutY="124.0" prefHeight="317.0" prefWidth="524.0">
+      <Label layoutX="620.0" layoutY="124.0" prefHeight="17.0" prefWidth="134.0" text="Notifications" />
+   <ListView layoutX="620.0" layoutY="149.0" prefHeight="224.0" prefWidth="148.0" />
+   <Label layoutX="620.0" layoutY="393.0" prefHeight="17.0" prefWidth="134.0" text="Next reminder:" />
+   <Spinner layoutX="621.0" layoutY="416.0" prefHeight="25.0" prefWidth="128.0" />
+   <TableView layoutX="21.0" layoutY="124.0" prefHeight="317.0" prefWidth="587.0">
      <columns>
-       <TableColumn prefWidth="75.0" text="Monday" />
-       <TableColumn prefWidth="75.0" text="Tuesday" />
-         <TableColumn prefWidth="75.0" text="Wednesday" />
-         <TableColumn prefWidth="75.0" text="Thursday" />
-         <TableColumn prefWidth="75.0" text="Friday" />
-         <TableColumn prefWidth="75.0" text="Saturday" />
-         <TableColumn prefWidth="75.0" text="Sunday" />
+       <TableColumn prefWidth="97.0" text="Monday" />
+       <TableColumn prefWidth="82.0" text="Tuesday" />
+         <TableColumn prefWidth="87.0" text="Wednesday" />
+         <TableColumn prefWidth="77.0" text="Thursday" />
+         <TableColumn prefWidth="78.0" text="Friday" />
+         <TableColumn prefWidth="83.0" text="Saturday" />
+         <TableColumn prefWidth="82.0" text="Sunday" />
      </columns>
    </TableView>
    <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#switchToMainScreen" prefHeight="25.0" prefWidth="59.0" text="Home" />

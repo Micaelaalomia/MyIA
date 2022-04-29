@@ -9,105 +9,81 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.MainScreenController">
-   <ImageView fitHeight="765.0" fitWidth="1434.0" layoutX="-11.0" layoutY="41.0">
-         <Image url="@../../../../../../../../Downloads/House%20plan%20-%20IA.png" />
-   </ImageView>
-
-        <Button layoutX="887.0" layoutY="280.0" mnemonicParsing="false" onAction="#switchToScheduleScreen" prefHeight="47.0" prefWidth="206.0" />
-        <Label layoutX="768.0" layoutY="155.0" text="Welcome to your garden!">
-            <font>
-               <Font name="Yu Gothic Medium" size="38.0" />
-            </font>
-        </Label>
-      <ToolBar layoutX="-1.0" layoutY="-1.0" prefHeight="55.0" prefWidth="1423.0" />
-   <Button layoutX="887.0" layoutY="378.0" mnemonicParsing="false" onAction="#switchToDiaryScreen" prefHeight="47.0" prefWidth="206.0" />
-   <Circle fill="DODGERBLUE" layoutX="430.0" layoutY="358.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
-   <Circle fill="DODGERBLUE" layoutX="200.0" layoutY="585.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
-   <Circle fill="DODGERBLUE" layoutX="168.0" layoutY="488.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
-   <Circle fill="DODGERBLUE" layoutX="168.0" layoutY="435.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
-   <Circle fill="DODGERBLUE" layoutX="201.0" layoutY="618.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
-   <Label layoutX="952.0" layoutY="296.0" text="My schedule">
-      <font>
-         <Font name="Yu Gothic Medium" size="13.0" />
-      </font>
-   </Label>
-   <Button layoutX="887.0" layoutY="475.0" mnemonicParsing="false" onAction="#switchToAddPlantScreen" prefHeight="47.0" prefWidth="206.0" />
-   <Label layoutX="952.0" layoutY="491.0" onDragDetected="#switchToAddPlantScreen" text="Add new plant">
-      <font>
-         <Font name="Yu Gothic Medium" size="13.0" />
-      </font>
-   </Label>
-   <Label layoutX="964.0" layoutY="394.0" text="My diary">
-      <font>
-         <Font name="Yu Gothic Medium" size="13.0" />
-      </font>
-   </Label>
-   <Label layoutX="404.0" layoutY="679.0" prefHeight="46.0" prefWidth="465.0" rotate="-8.1" text="Plan of your house!" textAlignment="CENTER">
-      <font>
-         <Font name="Yu Gothic Medium" size="25.0" />
-      </font>
-   </Label>
-   <ImageView fitHeight="167.0" fitWidth="138.0" layoutX="545.0" layoutY="580.0" rotate="10.0">
-         <Image url="@../../../../../../../../Pictures/arrow1.png" />
-   </ImageView>
-   <ImageView fitHeight="89.0" fitWidth="93.0" layoutX="802.0" layoutY="380.0">
-         <Image url="@../../../../../../../../Downloads/70c326239d7bd450f07d7ba3131d42f9.png" />
-   </ImageView>
-   <ImageView fitHeight="96.0" fitWidth="93.0" layoutX="1083.0" layoutY="483.0">
-         <Image url="@../../../../../../../../Downloads/cebfb174508bcafd0b81ad438d93685c-icono-de-doodle-de-hoja-de-planta.png" />
-   </ImageView>
-   <ImageView fitHeight="194.0" fitWidth="206.0" layoutX="1037.0" layoutY="215.0" rotate="-14.0">
-         <Image url="@../../../../../../../../Downloads/Nuevo%20proyecto%20(1).png" />
-   </ImageView>
-   <Label layoutX="309.0" layoutY="591.0" prefHeight="26.0" prefWidth="93.0" text="Living room" textAlignment="CENTER">
-      <font>
-         <Font name="Yu Gothic Medium" size="14.0" />
-      </font>
-   </Label>
-   <Label layoutX="88.0" layoutY="464.0" prefHeight="26.0" prefWidth="93.0" text="Garden" textAlignment="CENTER">
-      <font>
-         <Font name="Yu Gothic Medium" size="14.0" />
-      </font>
-   </Label>
-   <Label layoutX="412.0" layoutY="165.0" prefHeight="26.0" prefWidth="93.0" text="Closet" textAlignment="CENTER">
-      <font>
-         <Font name="Yu Gothic Medium" size="14.0" />
-      </font>
-   </Label>
-   <Label layoutX="528.0" layoutY="163.0" prefHeight="26.0" prefWidth="93.0" text="Bathroom" textAlignment="CENTER">
-      <font>
-         <Font name="Yu Gothic Medium" size="14.0" />
-      </font>
-   </Label>
-   <Label layoutX="402.0" layoutY="464.0" prefHeight="26.0" prefWidth="93.0" text="Kitchen" textAlignment="CENTER">
-      <font>
-         <Font name="Yu Gothic Medium" size="14.0" />
-      </font>
-   </Label>
-   <Label layoutX="372.0" layoutY="295.0" prefHeight="26.0" prefWidth="76.0" text="Laundry" textAlignment="CENTER">
-      <font>
-         <Font name="Yu Gothic Medium" size="14.0" />
-      </font>
-   </Label>
-   <Label layoutX="438.0" layoutY="282.0" prefHeight="26.0" prefWidth="76.0" text="Bathroom" textAlignment="CENTER">
-      <font>
-         <Font name="Yu Gothic Medium" size="14.0" />
-      </font>
-   </Label>
-   <Label layoutX="234.0" layoutY="193.0" prefHeight="26.0" prefWidth="93.0" text="Bedroom 3" textAlignment="CENTER">
-      <font>
-         <Font name="Yu Gothic Medium" size="14.0" />
-      </font>
-   </Label>
-   <Label layoutX="227.0" layoutY="310.0" prefHeight="26.0" prefWidth="93.0" text="Bedroom 2" textAlignment="CENTER">
-      <font>
-         <Font name="Yu Gothic Medium" size="14.0" />
-      </font>
-   </Label>
-   <Label layoutX="219.0" layoutY="432.0" prefHeight="26.0" prefWidth="93.0" text="Bedroom 1" textAlignment="CENTER">
-      <font>
-         <Font name="Yu Gothic Medium" size="14.0" />
-      </font>
-   </Label>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.MainScreenController">
+   <children>
+      <ImageView fitHeight="395.0" fitWidth="340.0" layoutX="59.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../java/org/example/images/HousePlan (2).png" />
+         </image>
+      </ImageView>
+      <Button layoutX="482.0" layoutY="249.0" mnemonicParsing="false" onAction="#switchToScheduleScreen" prefHeight="51.0" prefWidth="220.0" text="My schedule" />
+      <Label layoutX="419.0" layoutY="88.0" text="Welcome to your garden!">
+         <font>
+            <Font name="Yu Gothic Medium" size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="531.0" layoutY="175.0">
+         <font>
+            <Font name="Yu Gothic Medium" size="16.0" />
+         </font>
+      </Label>
+      <Circle fill="#74ab60" layoutX="259.0" layoutY="241.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#cee43c" layoutX="89.0" layoutY="293.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#c9a16c" layoutX="89.0" layoutY="320.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#9e4598" layoutX="114.0" layoutY="387.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="DODGERBLUE" layoutX="114.0" layoutY="413.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
+      <Label layoutX="337.0" layoutY="417.0" prefHeight="36.0" prefWidth="106.0" rotate="-8.1" text="Plan of your">
+         <font>
+            <Font name="Yu Gothic Medium" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="374.0" layoutY="432.0" prefHeight="36.0" prefWidth="106.0" rotate="-7.6" text="house!">
+         <font>
+            <Font name="Yu Gothic Medium" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="170.0" layoutY="377.0" prefHeight="36.0" prefWidth="71.0" text="Living room">
+         <font>
+            <Font name="Yu Gothic Medium" size="11.0" />
+         </font>
+      </Label>
+      <Label layoutX="239.0" layoutY="302.0" prefHeight="36.0" prefWidth="71.0" text="Kitchen">
+         <font>
+            <Font name="Yu Gothic Medium" size="11.0" />
+         </font>
+      </Label>
+      <Label layoutX="267.0" layoutY="177.0" prefHeight="36.0" prefWidth="71.0" text="Laundry">
+         <font>
+            <Font name="Yu Gothic Medium" size="11.0" />
+         </font>
+      </Label>
+      <Label layoutX="323.0" layoutY="98.0" prefHeight="36.0" prefWidth="71.0" text="Bathroom">
+         <font>
+            <Font name="Yu Gothic Medium" size="11.0" />
+         </font>
+      </Label>
+      <Label layoutX="127.0" layoutY="116.0" prefHeight="36.0" prefWidth="71.0" text="Bedroom 3">
+         <font>
+            <Font name="Yu Gothic Medium" size="11.0" />
+         </font>
+      </Label>
+      <Label layoutX="122.0" layoutY="195.0" prefHeight="36.0" prefWidth="71.0" text="Bedroom 2">
+         <font>
+            <Font name="Yu Gothic Medium" size="11.0" />
+         </font>
+      </Label>
+      <Label layoutX="121.0" layoutY="275.0" prefHeight="36.0" prefWidth="71.0" text="Bedroom 1">
+         <font>
+            <Font name="Yu Gothic Medium" size="11.0" />
+         </font>
+      </Label>
+      <Label layoutX="33.0" layoutY="302.0" prefHeight="36.0" prefWidth="71.0" text="Garden">
+         <font>
+            <Font name="Yu Gothic Medium" size="11.0" />
+         </font>
+      </Label>
+      <ToolBar layoutY="-1.0" prefHeight="40.0" prefWidth="800.0" />
+      <Button layoutX="482.0" layoutY="158.0" mnemonicParsing="false" onAction="#switchToDiaryScreen" prefHeight="51.0" prefWidth="220.0" text="My diary" />
+      <Button layoutX="482.0" layoutY="336.0" mnemonicParsing="false" onAction="#switchToAddPlantScreen" prefHeight="51.0" prefWidth="220.0" text="Add new plant" />
+   </children>
 </AnchorPane>

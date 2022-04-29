@@ -28,7 +28,7 @@
     <RadioButton layoutX="225.0" layoutY="142.0" mnemonicParsing="false" text="Indoor plant" />
     <RadioButton layoutX="225.0" layoutY="163.0" mnemonicParsing="false" text="Garden" />
     <Button cancelButton="true" layoutX="364.0" layoutY="227.0" mnemonicParsing="false" onAction="#switchToMainScreen" prefHeight="25.0" prefWidth="60.0" text="Cancel" />
-   <Label layoutX="204.0" layoutY="27.0" text="New plant">
+   <Label layoutX="193.0" layoutY="26.0" text="New plant">
       <font>
          <Font name="Consolas" size="23.0" />
       </font>

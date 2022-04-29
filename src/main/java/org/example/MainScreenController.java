@@ -2,12 +2,14 @@ package org.example;
 
 import java.io.IOException;
 
-import javafx.event.ActionEvent;
-// import javafx.fxml.FXML;
-// import javafx.scene.control.Button;
+// import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 public class MainScreenController {
 
+    public ImageView planImage;
     public void switchToScheduleScreen() throws IOException {
        App.setRoot("ScheduleScreen");
     }
@@ -22,5 +24,9 @@ public class MainScreenController {
 
     public void switchToAddPlantScreen() throws IOException {
         App.setRoot("AddPlantScreen");
+    }
+    public void initialize() throws IOException{
+        Image image = Image("\planImage.png");
+        planImage.setImage(image);
     }
 }
