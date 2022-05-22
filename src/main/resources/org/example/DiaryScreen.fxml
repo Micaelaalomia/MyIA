@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.MainScreenController">
+<AnchorPane prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.DiaryScreenController">
     <Pagination layoutX="239.0" layoutY="115.0" prefHeight="311.0" prefWidth="355.0" />
    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c6c7c9" height="110.0" layoutX="259.0" layoutY="257.0" stroke="#c6c7c9" strokeType="INSIDE" width="142.0" />
    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f2efef" height="228.0" layoutX="22.0" layoutY="229.0" stroke="#dddada" strokeType="INSIDE" width="210.0" />

@@ -1,13 +1,18 @@
 package org.example;
 
 import java.io.IOException;
-import javafx.fxml.FXML;
+
+import javafx.event.ActionEvent;
 
 public class DiaryScreenController {
 
-    @FXML
-    public void switchToMainScreen() throws IOException {
+    public void switchToMainScreen(ActionEvent actionEvent) throws IOException {
         App.setRoot("MainScreen");
     }
 
+    public void switchToScheduleScreen(ActionEvent actionEvent) {
+    }
+
+    public void switchToDiaryScreen(ActionEvent actionEvent) {
+    }
 }

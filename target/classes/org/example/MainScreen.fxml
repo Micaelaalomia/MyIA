@@ -5,7 +5,6 @@
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.MainScreenController">
@@ -14,20 +13,13 @@
       </ImageView>
       <Button layoutX="482.0" layoutY="249.0" mnemonicParsing="false" onAction="#switchToScheduleScreen" prefHeight="51.0" prefWidth="220.0" text="My schedule" />
       <Label layoutX="419.0" layoutY="88.0" text="Welcome to your garden!">
-         <font>
-            <Font name="Yu Gothic Medium" size="30.0" />
-         </font>
+         <font><Font name="Yu Gothic Medium" size="30.0" /></font>
       </Label>
       <Label layoutX="531.0" layoutY="175.0">
          <font>
             <Font name="Yu Gothic Medium" size="16.0" />
          </font>
       </Label>
-      <Circle fill="#74ab60" layoutX="437.0" layoutY="362.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="#cee43c" layoutX="89.0" layoutY="293.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="#c9a16c" layoutX="89.0" layoutY="320.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="#9e4598" layoutX="114.0" layoutY="387.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="DODGERBLUE" layoutX="114.0" layoutY="413.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
       <Label layoutX="337.0" layoutY="417.0" prefHeight="36.0" prefWidth="106.0" rotate="-8.1" text="Plan of your">
          <font>
             <Font name="Yu Gothic Medium" size="16.0" />

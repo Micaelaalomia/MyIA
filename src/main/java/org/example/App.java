@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  * JavaFX App
@@ -14,6 +15,7 @@ import java.io.IOException;
 public class App extends Application {
 
     private static Scene scene;
+    static ArrayList<Plant> plants = new ArrayList<>(); //Open ArrayList in App to avoid the location from resetting.
 
     @Override
     public void start(Stage stage) throws IOException {
