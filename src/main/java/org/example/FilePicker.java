@@ -17,20 +17,20 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public final class FileChooser extends Application {
+public final class FilePicker extends Application {
 
     private Desktop desktop = Desktop.getDesktop();
 
     @Override
     public void start(final Stage stage) {
+        /**
         stage.setTitle("File Chooser Sample");
 
-        final FileChooser fileChooser = new FileChooser();
+        FilePicker fileChooser = new FilePicker();
 
-        final Button openButton = new Button("Open a Picture...");
-        final Button openMultipleButton = new Button("Open Pictures...");
+        final Button selectFilebtn = new Button("Open a Picture...");
 
-        openButton.setOnAction(
+        selectFilebtn.setOnAction(
                 new EventHandler<ActionEvent>() {
                     @Override
                     public void handle(final ActionEvent e) {
@@ -41,28 +41,13 @@ public final class FileChooser extends Application {
                     }
                 });
 
-        openMultipleButton.setOnAction(
-                new EventHandler<ActionEvent>() {
-                    @Override
-                    public void handle(final ActionEvent e) {
-                        List<File> list =
-                                fileChooser.showOpenMultipleDialog(stage);
-                        if (list != null) {
-                            for (File file : list) {
-                                openFile(file);
-                            }
-                        }
-                    }
-                });
-
-
         final GridPane inputGridPane = new GridPane();
 
-        GridPane.setConstraints(openButton, 0, 0);
+        GridPane.setConstraints(selectFilebtn, 0, 0);
         GridPane.setConstraints(openMultipleButton, 1, 0);
         inputGridPane.setHgap(6);
         inputGridPane.setVgap(6);
-        inputGridPane.getChildren().addAll(openButton, openMultipleButton);
+        inputGridPane.getChildren().addAll(selectFilebtn, openMultipleButton);
 
         final Pane rootGroup = new VBox(12);
         rootGroup.getChildren().addAll(inputGridPane);
@@ -81,9 +66,11 @@ public final class FileChooser extends Application {
             desktop.open(file);
         } catch (IOException ex) {
             Logger.getLogger(
-                    FileChooser.class.getName()).log(
+                    FilePicker.class.getName()).log(
                     Level.SEVERE, null, ex
             );
         }
     }
+    **/
+}
 }

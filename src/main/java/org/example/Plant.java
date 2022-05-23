@@ -12,9 +12,8 @@ public class Plant extends StackPane {
     String type;
     String location;
     double x; double y; double r; Color color; //Variables for the constructor of a circle class.
-    String notes;
-    double orgSceneX, orgSceneY;
 
+    //The constructor below allows creating a plant.
     public Plant(String name, int number, String type, String location, double r, Color color) {
         this.name = name;
         this.number = number;
@@ -45,6 +44,60 @@ public class Plant extends StackPane {
         });
 
         this.getChildren().addAll(circle, text);
+    }
+
+    // Getter to get a variable of the plant from the primary controller.
+    // Setter to update and change a variable of the plant.
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getNumber() {
+        return number;
+    }
+    public void setNumber(int number) {
+        this.number = number;
+    }
+
+    public String getType() {
+        return type;
+    }
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public double getX() {
+        return x;
+    }
+    public void setX(double x) {
+        this.x = x;
+    }
+    public double getY() {
+        return y;
+    }
+    public void setY(double y) {
+        this.y = y;
+    }
+
+    public double getR() {
+        return r;
+    }
+    public void setR(double r) {
+        this.r = r;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
     }
 }
 
