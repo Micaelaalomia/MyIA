@@ -11,7 +11,7 @@
    <children>
       <ImageView fx:id="planImage" fitHeight="395.0" fitWidth="340.0" layoutX="59.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
       </ImageView>
-      <Button layoutX="482.0" layoutY="249.0" mnemonicParsing="false" onAction="#switchToScheduleScreen" prefHeight="51.0" prefWidth="220.0" text="My schedule" />
+      <Button layoutX="482.0" layoutY="231.0" mnemonicParsing="false" onAction="#switchToScheduleScreen" prefHeight="51.0" prefWidth="220.0" text="My schedule" />
       <Label layoutX="419.0" layoutY="88.0" text="Welcome to your garden!">
          <font><Font name="Yu Gothic Medium" size="30.0" /></font>
       </Label>
@@ -72,6 +72,6 @@
       </Label>
       <ToolBar layoutY="-1.0" prefHeight="40.0" prefWidth="800.0" />
       <Button layoutX="482.0" layoutY="158.0" mnemonicParsing="false" onAction="#switchToDiaryScreen" prefHeight="51.0" prefWidth="220.0" text="My diary" />
-      <Button fx:id="addPlantBtn" layoutX="482.0" layoutY="336.0" mnemonicParsing="false" onAction="#switchToAddPlantScreen" prefHeight="51.0" prefWidth="220.0" text="Add new plant" />
+      <Button fx:id="addPlantBtn" layoutX="482.0" layoutY="313.0" mnemonicParsing="false" onAction="#switchToAddPlantScreen" prefHeight="51.0" prefWidth="220.0" text="Add new plant" />
    </children>
 </AnchorPane>

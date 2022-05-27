@@ -14,9 +14,8 @@ public class Plant extends StackPane {
     double x; double y; double r; Color color; //Variables for the constructor of a circle class.
 
     //The constructor below allows creating a plant.
-    public Plant(String name, int number, String type, String location, double r, Color color) {
+    public Plant(String name, String type, String location, double r, Color color) {
         this.name = name;
-        this.number = number;
         this.type = type;
         this.location = location;
 

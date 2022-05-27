@@ -36,12 +36,9 @@ public class MainScreenController {
     }
 
     public void initialize() throws IOException{
-        App.plants.add(new Plant("Spikey", 2, "cactus", "Living room", 10, Color.GREEN)); //adds new plant
-
 
         for (Plant p: App.plants) {
             mainPane.getChildren().add(p); //gets each plant created and adds it to controller when app is ran.
-
         }
 
         //When controller is initialized, it gets the planImage from a folder in the resources class.

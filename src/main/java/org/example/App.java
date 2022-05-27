@@ -1,6 +1,8 @@
 package org.example;
 
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -13,9 +15,10 @@ import java.util.ArrayList;
  * JavaFX App
  */
 public class App extends Application {
+    //Open ArrayList in App to avoid the location from resetting.
 
     private static Scene scene;
-    static ArrayList<Plant> plants = new ArrayList<>(); //Open ArrayList in App to avoid the location from resetting.
+    static ObservableList<Plant> plants = FXCollections.observableArrayList(); //ArrayList to keep all plants
 
     @Override
     public void start(Stage stage) throws IOException {
