@@ -1,11 +1,23 @@
 package org.example;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
+import javafx.collections.FXCollections;
+import javafx.event.ActionEvent;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseButton;
 import javafx.scene.paint.Color;
 
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.Reader;
+import java.util.ArrayList;
 
 public class AddPlantController extends App{
 
@@ -14,24 +26,65 @@ public class AddPlantController extends App{
     public TextField pNameTxt;
     public TextField pTypeTxt;
     public TextField pLocationTxt;
-    int max_NumberOfPlants = plants.size();
+    int max_NumberOfPlants = 6;
 
 
     public void switchToMainScreen() throws IOException {
         App.setRoot("MainScreen");
     }
 
+    //where this controller starts working when it is first loaded.
     public void initialize(){
-        //where this controller starts working when it is first loaded.
+
+        loadPlants();
+        plantsName.setCellValueFactory(new PropertyValueFactory<Plant, String>("name")); //gets plants names from Plant class
 
         plantsTable.getColumns().add(plantsName); //adds first column into table
         plantsTable.setItems(plants);
+
+        plantsTable.setRowFactory(rowClick ->{ //when row is clicked, something happens
+            TableRow<Plant> row = new TableRow<>(); // a temporary row were information is saved into
+            row.setOnMouseClicked(event ->{
+                if(!row.isEmpty() && event.getButton()== MouseButton.PRIMARY && event.getClickCount() == 2){
+                    Plant clickedRow = row.getItem();
+                    pNameTxt.setText(clickedRow.getName());
+                    pTypeTxt.setText(clickedRow.getType());
+                    pLocationTxt.setText(clickedRow.getLocation());
+                }
+            });
+            return row;
+        });
+    }
+
+    private void loadPlants() {
+        //loads plants from saved file
+        //open and read JSON for any previously saved data
+        Gson gson = new Gson();
+        try(Reader reader = new FileReader("plants.json")){
+            //convert JSON file to Java object
+            ArrayList<Plant> imports = gson.fromJson(reader, new TypeToken<ArrayList<Plant>>(){ //each item in JSON file will be considered to be a plant
+            }.getType());
+            plants = FXCollections.observableArrayList(imports); //temporary ArrayList
+
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+        // https://mkyong.com/java/how-do-convert-java-object-to-from-json-format-gson-api/
     }
 
     //when save button is clicked, a new plant will be added to arrayList.
-    public void saveBtn() {
-        while (max_NumberOfPlants < 6) {
+    public void saveBtn(ActionEvent actionEvent) {
+        if (plants.size() < max_NumberOfPlants) { //Only 5 plants can be added
             App.plants.add(new Plant(pNameTxt.getText(), pTypeTxt.getText(), pLocationTxt.getText(), 10, Color.GREEN)); //adds new plant
         }
+
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        try(FileWriter writer = new FileWriter("plants.json")){
+            gson.toJson(plants, writer);
+            System.out.println("Saved.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        // https://mkyong.com/java/how-do-convert-java-object-to-from-json-format-gson-api/
     }
 }

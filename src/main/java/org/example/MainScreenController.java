@@ -38,10 +38,10 @@ public class MainScreenController {
     public void initialize() throws IOException{
 
         for (Plant p: App.plants) {
-            mainPane.getChildren().add(p); //gets each plant created and adds it to controller when app is ran.
+            mainPane.getChildren().add(p); //gets each plant created and adds it to controller when app is ran
         }
 
-        //When controller is initialized, it gets the planImage from a folder in the resources class.
+        //when controller is initialized, it gets the planImage from a folder in the resources class.
         planImage.setImage(new Image(getClass().getResourceAsStream("/images/planImage.png")));
     }
 }
