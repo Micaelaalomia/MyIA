@@ -7,7 +7,7 @@ import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
 import javafx.stage.Window;
 
-public class ScheduleScreenController {
+public class ScheduleScreenController extends MainScreenController{
 
     private Window stage;
 

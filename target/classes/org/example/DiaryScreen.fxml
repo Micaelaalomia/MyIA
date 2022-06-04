@@ -53,7 +53,7 @@
         </font>
     </Label>
    <Label layoutX="36.0" layoutY="308.0" prefHeight="17.0" prefWidth="142.0" text="Open file from device" />
-   <Button layoutX="157.0" layoutY="304.0" minWidth="55.0" mnemonicParsing="false" prefHeight="25.0" text="Select" />
+   <Button fx:id="selectBtn" layoutX="157.0" layoutY="304.0" minWidth="55.0" mnemonicParsing="false" prefHeight="25.0" text="Select" />
    <Label layoutX="35.0" layoutY="276.0" prefHeight="17.0" prefWidth="210.0" text="Please select a JPG / PNG file only.">
       <font>
          <Font name="System Italic" size="12.0" />

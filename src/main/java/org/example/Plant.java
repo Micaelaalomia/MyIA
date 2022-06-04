@@ -1,5 +1,6 @@
 package org.example;
 
+import com.google.gson.annotations.Expose;
 import javafx.scene.Cursor;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
@@ -7,11 +8,11 @@ import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
 
 public class Plant extends StackPane {
-    String name;
-    int number;
-    String type;
-    String location;
-    double x; double y; double r; Color color; //Variables for the constructor of a circle class.
+    @Expose String name;
+    @Expose int number;
+    @Expose String type;
+    @Expose String location;
+    @Expose double x; @Expose double y; @Expose double r; @Expose Color color; //Variables for the constructor of a circle class.
 
     //The constructor below allows creating a plant.
     public Plant(String name, String type, String location, double r, Color color) {

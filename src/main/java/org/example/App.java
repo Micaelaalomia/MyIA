@@ -14,10 +14,10 @@ import java.io.IOException;
  * JavaFX App
  */
 public class App extends Application {
-    //Open ArrayList in App to avoid the location from resetting.
+    //Open ObservableList in App to avoid the location from resetting.
 
     private static Scene scene;
-    static ObservableList<Plant> plants = FXCollections.observableArrayList(); //ArrayList to keep all plants
+    static ObservableList<Plant> plants = FXCollections.observableArrayList(); //ObservableList to keep all plants
 
     @Override
     public void start(Stage stage) throws IOException {
