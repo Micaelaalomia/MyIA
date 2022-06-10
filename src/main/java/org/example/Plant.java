@@ -45,6 +45,7 @@ public class Plant extends StackPane {
 
         this.getChildren().addAll(circle, text);
     }
+    // http://www.java2s.com/Tutorials/Java/JavaFX_How_to/Shape/Handle_Shape_drag_and_drop_events.htm
 
     // Getter to get a variable of the plant from the primary controller.
     // Setter to update and change a variable of the plant.

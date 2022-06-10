@@ -74,21 +74,11 @@ public class AddPlantController extends App{
         // https://mkyong.com/java/how-do-convert-java-object-to-from-json-format-gson-api/
     }
 
-    String titleBar = "You've reached your limit.";
-    String infoMessage = "Ups! It seems like your plants don't want sixth friend around :( \nClick OK to cancel, or HOME if you want to remove one of your plants.";
-    public void infoBox(String infoMessage, String titleBar){
-        this.titleBar = titleBar;
-        this.infoMessage = infoMessage;
-    }
-
     //when save button is clicked, a new plant will be added to ObservableList.
     public void saveBtn(ActionEvent actionEvent) {
         if (plants.size() <= max_NumberOfPlants) { //Only 5 plants can be added
             //adds new plant
             App.plants.add(new Plant(pNameTxt.getText(), pTypeTxt.getText(), pLocationTxt.getText(), 10, Color.GREEN));
-
-            //statement to popup an error message box
-            JOptionPane.showMessageDialog(null, infoMessage, "InfoBox: " + titleBar, JOptionPane.INFORMATION_MESSAGE);
         }
         // https://stackoverflow.com/questions/7080205/popup-message-boxes
 

@@ -9,20 +9,11 @@ import javafx.stage.Window;
 
 public class ScheduleScreenController extends MainScreenController{
 
-    private Window stage;
-
     public void switchToDiaryScreen(ActionEvent actionEvent) throws IOException {
         App.setRoot("DiaryScreen");
     }
 
     public void switchToMainScreen(ActionEvent actionEvent) throws IOException {
         App.setRoot("MainScreen");
-    }
-
-    //when save button is clicked, a new plant will be added to arrayList.
-    public void selectBtn(ActionEvent actionEvent) {
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Open Resource File");
-        fileChooser.showOpenDialog(stage);
     }
 }
