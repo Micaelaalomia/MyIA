@@ -7,6 +7,7 @@
 <?import javafx.scene.control.Pagination?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
@@ -53,7 +54,6 @@
         </font>
     </Label>
    <Label layoutX="36.0" layoutY="308.0" prefHeight="17.0" prefWidth="142.0" text="Open file from device" />
-   <Button fx:id="selectBtn" layoutX="157.0" layoutY="304.0" minWidth="55.0" mnemonicParsing="false" prefHeight="25.0" text="Select" />
    <Label layoutX="35.0" layoutY="276.0" prefHeight="17.0" prefWidth="210.0" text="Please select a JPG / PNG file only.">
       <font>
          <Font name="System Italic" size="12.0" />
@@ -67,14 +67,8 @@
          <MenuItem mnemonicParsing="false" text="Frame 4" />
      </items>
    </MenuButton>
-   <Button defaultButton="true" layoutX="155.0" layoutY="405.0" mnemonicParsing="false" onAction="#switchToDiaryScreen" prefHeight="25.0" prefWidth="55.0" text="Save" />
-   <Button cancelButton="true" layoutX="94.0" layoutY="405.0" mnemonicParsing="false" onAction="#switchToDiaryScreen" prefHeight="25.0" prefWidth="55.0" text="Cancel" />
-   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c6c7c9" height="110.0" layoutX="258.0" layoutY="129.0" stroke="#c6c7c9" strokeType="INSIDE" width="142.0" />
-   <Label layoutX="312.0" layoutY="176.0" prefHeight="17.0" prefWidth="59.0" text="Image" textFill="#6f6d6d">
-      <font>
-         <Font name="System Italic" size="12.0" />
-      </font>
-   </Label>
+   <Button defaultButton="true" layoutX="121.0" layoutY="405.0" mnemonicParsing="false" onAction="#selectImageBtn" prefHeight="25.0" prefWidth="89.0" text="Select Image" />
+   <Button cancelButton="true" layoutX="62.0" layoutY="405.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="55.0" text="Cancel" />
    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c6c7c9" height="110.0" layoutX="424.0" layoutY="130.0" stroke="#c6c7c9" strokeType="INSIDE" width="142.0" />
    <Label layoutX="478.0" layoutY="177.0" prefHeight="17.0" prefWidth="59.0" text="Image" textFill="#6f6d6d">
       <font>
@@ -86,4 +80,5 @@
          <Font name="Consolas" size="20.0" />
       </font>
    </Label>
+   <ImageView fx:id="imageHolder1" fitHeight="110.0" fitWidth="142.0" layoutX="259.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true" />
 </AnchorPane>
