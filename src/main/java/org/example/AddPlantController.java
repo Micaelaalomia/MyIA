@@ -20,7 +20,7 @@ import java.io.IOException;
 import java.io.Reader;
 import java.util.ArrayList;
 
-public class AddPlantController extends App{
+public class AddPlantController{
 
     public TableView plantsTable;
     public TableColumn<Plant, String> plantsName = new TableColumn<>("Name");
@@ -37,12 +37,11 @@ public class AddPlantController extends App{
     //where this controller starts working when it is first loaded.
     public void initialize(){
 
-        saveBtn(new ActionEvent());
-        loadPlants();
+
         plantsName.setCellValueFactory(new PropertyValueFactory<Plant, String>("name")); //gets plants names from Plant class
 
         plantsTable.getColumns().add(plantsName); //adds first column into table
-        plantsTable.setItems(plants);
+        plantsTable.setItems(App.plants);
 
         plantsTable.setRowFactory(rowClick ->{ //when row is clicked, something happens
             TableRow<Plant> row = new TableRow<>(); // a temporary row were information is saved into
@@ -58,25 +57,11 @@ public class AddPlantController extends App{
         });
     }
 
-    private void loadPlants() {
-        //loads plants from saved file
-        //open and read JSON for any previously saved data
-        Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
-        try(Reader reader = new FileReader("plants.json")){
-            //convert JSON file to Java object
-            ArrayList<Plant> imports = gson.fromJson(reader, new TypeToken<ArrayList<Plant>>(){ //each item in JSON file will be considered to be a plant
-            }.getType());
-            plants = FXCollections.observableArrayList(imports); //temporary ArrayList
 
-        }catch (IOException e){
-            e.printStackTrace();
-        }
-        // https://mkyong.com/java/how-do-convert-java-object-to-from-json-format-gson-api/
-    }
 
     //when save button is clicked, a new plant will be added to ObservableList.
     public void saveBtn(ActionEvent actionEvent) {
-        if (plants.size() <= max_NumberOfPlants) { //Only 5 plants can be added
+        if (App.plants.size() <= max_NumberOfPlants) { //Only 5 plants can be added
             //adds new plant
             App.plants.add(new Plant(pNameTxt.getText(), pTypeTxt.getText(), pLocationTxt.getText(), 10, Color.GREEN));
         }
@@ -84,7 +69,7 @@ public class AddPlantController extends App{
 
         Gson gson = new GsonBuilder().setPrettyPrinting().excludeFieldsWithoutExposeAnnotation().create();
         try(FileWriter writer = new FileWriter("plants.json")){
-            gson.toJson(plants, writer);
+            gson.toJson(App.plants, writer);
             System.out.println("Saved.");
         } catch (IOException e) {
             e.printStackTrace();

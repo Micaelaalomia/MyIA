@@ -2,70 +2,108 @@ package org.example;
 
 import java.awt.*;
 import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
-import java.util.logging.Logger;
+import java.io.Reader;
+import java.net.MalformedURLException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableRow;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseButton;
+import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Window;
+import org.apache.commons.io.FileUtils;
 
 public class DiaryScreenController{
 
-    public ImageView imageHolder1;
+    public TableView dateTable;
+    public TableColumn<DayTime, String> dateOptions = new TableColumn<>("Days");
+    public VBox imageVBox;
+    public TextArea notesTxt;
     Window stage;
     File file;
-    public void initialize(){
-    }
 
     public void switchToMainScreen(ActionEvent actionEvent) throws IOException {
         App.setRoot("MainScreen");
     }
 
-    public void switchToScheduleScreen(ActionEvent actionEvent) {
+    public void switchToScheduleScreen(ActionEvent actionEvent) throws IOException {
+        App.setRoot("ScheduleScreen");
     }
 
-    public void switchToDiaryScreen(ActionEvent actionEvent) {
+    public void initialize(){
+
+        dateOptions.setCellValueFactory(new PropertyValueFactory<DayTime, String>("date"));
+        dateTable.getColumns().add(dateOptions); //adds first column into table
+        dateTable.setItems(App.days);
+
+        dateTable.setRowFactory(rowClick ->{ //when row is clicked, something happens
+            TableRow<DayTime> row = new TableRow<>(); // a temporary row were information is saved into
+            row.setOnMouseClicked(event ->{
+                if(!row.isEmpty() && event.getButton()== MouseButton.PRIMARY && event.getClickCount() == 2){
+                    DayTime clickedRow = row.getItem();
+
+                    dateOptions.setText(String.valueOf(clickedRow.getDate()));
+                    notesTxt.setText(clickedRow.getNotes());
+                }
+            });
+            return row;
+        });
     }
+
 
     private Desktop desktop = Desktop.getDesktop();
+
     public void selectImageBtn(ActionEvent actionEvent) {
 
         FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Open Resource File");
+        fileChooser.setTitle("Choose a file");
         fileChooser.showOpenDialog(stage);
 
-        final Button openButton = new Button("Open a Picture...");
-        openButton.setOnAction(
-                new EventHandler<ActionEvent>() {
-                    @Override
-                    public void handle(final ActionEvent e) {
-                        configureFileChooser(fileChooser);
-                        File file = fileChooser.showOpenDialog(stage);
-                        if (file != null) {
-                            openFile(file);
-                            imageHolder1.setImage(new Image(file.toURI().toString()));
-                        }
-                    }
-                });
-    }
-
-    private void configureFileChooser(FileChooser fileChooser) {
-        fileChooser.setTitle("View Images");
-        fileChooser.setInitialDirectory(
-                new File(System.getProperty("user.home"))
-        );
-    }
-
-     private void openFile(File file) {
+        File dest = new File("\\Photos");
         try {
-            desktop.open(file);
-        } catch (IOException ex) {
-           System.out.println(ex);
+            FileUtils.copyDirectory(file, dest);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        if(file != null){
+            String img = null;
+            try{
+                img = file.toURI().toURL().toExternalForm();
+            } catch (MalformedURLException ex){
+                ex.printStackTrace();
+            }
+
+            Image image = new Image(img);
+            ImageView imageHolder = new ImageView();
+            imageHolder.setImage(image);
+            imageVBox.getChildren().add(imageHolder);
+
         }
     }
 
+    public void addDayBtn(ActionEvent actionEvent) {
+        //adds new day
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+        LocalDateTime now = LocalDateTime.now();
+        App.days.add(new DayTime(now, notesTxt.getText()));
+        System.out.println(App.days.get(0));
+
+    }
 }
