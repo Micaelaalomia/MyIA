@@ -1,4 +1,38 @@
 [
   {
+    "name": "Ben",
+    "number": 0,
+    "type": "Cactus",
+    "location": "Kitchen",
+    "x": 0.0,
+    "y": 0.0,
+    "r": 0.0
+  },
+  {
+    "name": "Fred",
+    "number": 0,
+    "type": "Cactus",
+    "location": "Kitchen",
+    "x": 0.0,
+    "y": 0.0,
+    "r": 0.0
+  },
+  {
+    "name": "",
+    "number": 0,
+    "type": "",
+    "location": "",
+    "x": 0.0,
+    "y": 0.0,
+    "r": 0.0
+  },
+  {
+    "name": "",
+    "number": 0,
+    "type": "",
+    "location": "",
+    "x": 0.0,
+    "y": 0.0,
+    "r": 0.0
   }
 ]

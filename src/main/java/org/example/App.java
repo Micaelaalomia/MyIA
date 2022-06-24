@@ -22,7 +22,7 @@ import java.util.ArrayList;
 public class App extends Application {
     //Open ObservableList in App to avoid the location from resetting.
 
-    private static Scene scene;
+    static Scene scene;
     static ObservableList<Plant> plants = FXCollections.observableArrayList(); //ObservableList to keep all plants
     static ObservableList<DayTime> days = FXCollections.observableArrayList(); //ObservableList to organize per day
 

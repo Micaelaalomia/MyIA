@@ -1,20 +1,12 @@
 package org.example;
 
-import java.awt.*;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
 import java.net.MalformedURLException;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.reflect.TypeToken;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableRow;
@@ -57,7 +49,6 @@ public class DiaryScreenController{
             row.setOnMouseClicked(event ->{
                 if(!row.isEmpty() && event.getButton()== MouseButton.PRIMARY && event.getClickCount() == 2){
                     DayTime clickedRow = row.getItem();
-
                     dateOptions.setText(String.valueOf(clickedRow.getDate()));
                     notesTxt.setText(clickedRow.getNotes());
                 }
@@ -67,17 +58,15 @@ public class DiaryScreenController{
     }
 
 
-    private Desktop desktop = Desktop.getDesktop();
 
     public void selectImageBtn(ActionEvent actionEvent) {
 
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Choose a file");
-        fileChooser.showOpenDialog(stage);
-
-        File dest = new File("\\Photos");
+        File file = fileChooser.showOpenDialog(stage);
+        File dest = new File("Photos\\"+"timeWithSeconds.jpg");
         try {
-            FileUtils.copyDirectory(file, dest);
+            FileUtils.copyFile(file, dest);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -93,16 +82,15 @@ public class DiaryScreenController{
             Image image = new Image(img);
             ImageView imageHolder = new ImageView();
             imageHolder.setImage(image);
+            imageHolder.setFitHeight(200);
+            imageHolder.setPreserveRatio(true);
             imageVBox.getChildren().add(imageHolder);
 
         }
     }
 
     public void addDayBtn(ActionEvent actionEvent) {
-        //adds new day
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
-        LocalDateTime now = LocalDateTime.now();
-        App.days.add(new DayTime(now, notesTxt.getText()));
+        App.days.add(new DayTime(LocalDateTime.now(), notesTxt.getText()));       //adds new day
         System.out.println(App.days.get(0));
 
     }

@@ -1,17 +1,12 @@
 package org.example;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import javafx.fxml.FXML;
-import javafx.scene.Cursor;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
-
 public class MainScreenController {
 
     @FXML
@@ -35,10 +30,10 @@ public class MainScreenController {
         App.setRoot("AddPlantScreen");
     }
 
-    public void initialize() throws IOException{
+    public void initialize(){
 
         for (Plant p: App.plants) {
-            mainPane.getChildren().add(p); //gets each plant created and adds it to controller when app is ran
+           mainPane.getChildren().add(p); //gets each plant created and adds it to controller when app is ran
         }
 
         //when controller is initialized, it gets the planImage from a folder in the resources class.

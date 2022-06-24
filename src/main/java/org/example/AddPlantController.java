@@ -2,8 +2,6 @@ package org.example;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.reflect.TypeToken;
-import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableRow;
@@ -14,10 +12,8 @@ import javafx.scene.input.MouseButton;
 import javafx.scene.paint.Color;
 
 import javax.swing.*;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.Reader;
 import java.util.ArrayList;
 
 public class AddPlantController{
@@ -38,7 +34,7 @@ public class AddPlantController{
     public void initialize(){
 
 
-        plantsName.setCellValueFactory(new PropertyValueFactory<Plant, String>("name")); //gets plants names from Plant class
+        plantsName.setCellValueFactory(new PropertyValueFactory<>("name")); //gets plants names from Plant class
 
         plantsTable.getColumns().add(plantsName); //adds first column into table
         plantsTable.setItems(App.plants);
@@ -66,6 +62,12 @@ public class AddPlantController{
             App.plants.add(new Plant(pNameTxt.getText(), pTypeTxt.getText(), pLocationTxt.getText(), 10, Color.GREEN));
         }
         // https://stackoverflow.com/questions/7080205/popup-message-boxes
+        else{
+            public void main(String[] args) {
+                JFrame jFrame = new JFrame();
+                JOptionPane.showMessageDialog(jFrame, "Ups… You’ve reached a maximum of 6 plants.");
+            }
+        }
 
         Gson gson = new GsonBuilder().setPrettyPrinting().excludeFieldsWithoutExposeAnnotation().create();
         try(FileWriter writer = new FileWriter("plants.json")){
