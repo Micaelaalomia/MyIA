@@ -3,18 +3,13 @@ package org.example;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import javafx.event.ActionEvent;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableRow;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseButton;
 import javafx.scene.paint.Color;
 
-import javax.swing.*;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 
 public class AddPlantController{
 
@@ -63,10 +58,15 @@ public class AddPlantController{
         }
         // https://stackoverflow.com/questions/7080205/popup-message-boxes
         else{
-            public void main(String[] args) {
-                JFrame jFrame = new JFrame();
-                JOptionPane.showMessageDialog(jFrame, "Ups… You’ve reached a maximum of 6 plants.");
-            }
+            // create a alert
+            Alert a = new Alert(Alert.AlertType.NONE);
+            // action event
+                // set alert type
+                a.setAlertType(Alert.AlertType.CONFIRMATION);
+                a.setContentText("Ups...You’ve reached a maximum of 6 plants.");
+
+                // show the dialog
+                a.show();
         }
 
         Gson gson = new GsonBuilder().setPrettyPrinting().excludeFieldsWithoutExposeAnnotation().create();
