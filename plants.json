@@ -1,36 +1,9 @@
 [
   {
-    "name": "Ben",
+    "name": "dw",
     "number": 0,
-    "type": "Cactus",
-    "location": "Kitchen",
-    "x": 0.0,
-    "y": 0.0,
-    "r": 0.0
-  },
-  {
-    "name": "Fred",
-    "number": 0,
-    "type": "Cactus",
-    "location": "Kitchen",
-    "x": 0.0,
-    "y": 0.0,
-    "r": 0.0
-  },
-  {
-    "name": "",
-    "number": 0,
-    "type": "",
-    "location": "",
-    "x": 0.0,
-    "y": 0.0,
-    "r": 0.0
-  },
-  {
-    "name": "",
-    "number": 0,
-    "type": "",
-    "location": "",
+    "type": "ew",
+    "location": "ew",
     "x": 0.0,
     "y": 0.0,
     "r": 0.0

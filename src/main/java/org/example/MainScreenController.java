@@ -31,6 +31,7 @@ public class MainScreenController {
     }
 
     public void initialize(){
+        System.out.println(App.plants.size());
         for (Plant p: App.plants) {
           mainPane.getChildren().add(p); //gets each plant created and adds it to controller when app is ran
         }
