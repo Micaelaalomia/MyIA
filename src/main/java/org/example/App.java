@@ -12,6 +12,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Reader;
 import java.util.ArrayList;
@@ -24,6 +25,7 @@ public class App extends Application {
 
     static Scene scene;
     static ObservableList<Plant> plants = FXCollections.observableArrayList(); //ObservableList to keep all plants
+    static ObservableList<PlantTemp> plantsTemp = FXCollections.observableArrayList(); //ObservableList to keep all plants
     static ObservableList<DayTime> days = FXCollections.observableArrayList(); //ObservableList to organize per day
 
     @Override
@@ -53,17 +55,22 @@ public class App extends Application {
     private void loadPlants() {
         //loads plants from saved file
         //open and read JSON for any previously saved data
-        Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
+        Gson gson = new GsonBuilder().create();
         try(Reader reader = new FileReader("plants.json")){
             //convert JSON file to Java object
-            ArrayList<Plant> imports = gson.fromJson(reader, new TypeToken<ArrayList<Plant>>(){ //each item in JSON file will be considered to be a plant
+            ArrayList<PlantTemp> imports = gson.fromJson(reader, new TypeToken<ArrayList<PlantTemp>>(){ //each item in JSON file will be considered to be a plant
             }.getType());
-            App.plants = FXCollections.observableArrayList(imports); //temporary ArrayList
+            App.plantsTemp = FXCollections.observableArrayList(imports); //temporary ArrayList
 
         }catch (IOException e){
             e.printStackTrace();
         }
         // https://mkyong.com/java/how-do-convert-java-object-to-from-json-format-gson-api/
+
+
+        for (PlantTemp p: plantsTemp) {
+            plants.add(new Plant(p.getName(),p.getType(),p.getLocation(),p.getpX(),p.getpY(),p.color));
+        }
     }
 
     static void setRoot(String fxml) throws IOException {
@@ -74,4 +81,6 @@ public class App extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
         return fxmlLoader.load();
     }
+
+
 }

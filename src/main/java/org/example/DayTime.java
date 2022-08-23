@@ -6,16 +6,28 @@ import java.util.ArrayList;
 
 public class DayTime {
 
+    String dateString;
     LocalDateTime date;
     String notes;
 
     public DayTime(LocalDateTime date, String notes) {
         this.date = date;
         this.notes = notes;
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+        this.dateString = dtf.format(date);
+
     }
 
     public LocalDateTime getDate() {
         return date;
+    }
+
+    public String getDateString() {
+        return dateString;
+    }
+
+    public void setDateString(String dateString) {
+        this.dateString = dateString;
     }
 
     public void setDate(LocalDateTime date) {
@@ -32,9 +44,6 @@ public class DayTime {
 
     @Override
     public String toString() {
-       // DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
-
-        return dtf.format(date);
+        return dateString;
     }
 }

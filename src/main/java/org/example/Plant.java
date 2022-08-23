@@ -1,49 +1,70 @@
 package org.example;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.annotations.Expose;
 import javafx.scene.Cursor;
+import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
 
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class Plant extends StackPane {
     @Expose String name;
-    @Expose int number;
     @Expose String type;
     @Expose String location;
-    @Expose double x; @Expose double y; @Expose double r; @Expose Color color; //Variables for the constructor of a circle class.
+    @Expose double pX; @Expose double pY; //Variables for the constructor of a circle class.
+    @Expose String color;
 
     //The constructor below allows creating a plant.
-    public Plant(String name, String type, String location, double r, Color color) {
+    public Plant(String name, String type, String location, double pX, double pY, String color) {
         this.name = name;
         this.type = type;
         this.location = location;
-
-        final Circle circle = new Circle(r, color); //Creates a circle for the last plant added
+        this.color = color;
+        int r = 10;
+        this.pX = pX;
+        this.pY = pY;
+        Circle circle = new Circle(r, Color.valueOf(color)); //Creates a circle for the last plant added
         circle.setStroke(Color.BLACK);
         circle.setStrokeWidth(1);
-        final Text text = new Text(":)"); //Plant starts off happy
+        Text text = new Text(":)"); //Plant starts off happy
 
         this.setCursor(Cursor.HAND);
 
-        this.setOnMousePressed((t) -> {
+        Label plantInfoLabel = new Label(this.getName() + "\n " + this.getType()+ "\n " + this.getLocation());
+        plantInfoLabel.setStyle("-fx-background-color: #f4f4f4;-fx-border-color: #000000;");
+
+        plantInfoLabel.setTranslateX(25);
+        plantInfoLabel.setVisible(false);
+
+        setOnMousePressed((t) -> {
             Plant c = (Plant) (t.getSource()); //Finds out which plant it was
             text.setText(":0"); //When mouse pressed, plant looks shocked
+            plantInfoLabel.setVisible(true);
             c.toFront(); //Brings the plant to the front
         });
-        this.setOnMouseDragged(event -> { // When dragged, plant moves around
-            this.setTranslateX(event.getX() + this.getTranslateX() - r);
-            this.setTranslateY(event.getY() + this.getTranslateY() - r);
-            this.x = event.getX() + this.getTranslateX() - r; //This is to save the x-coordinate for its new location.
-            this.y = event.getX() + this.getTranslateY() - r; //This is to save the y-coordinate for its new location.
-            event.consume();
+        setOnMouseDragged((t) -> {
+            Plant c = (Plant) (t.getSource()); //Finds out which plant it was
+            c.setTranslateX(t.getX() + c.getTranslateX() - r);
+            c.setTranslateY(t.getY() + c.getTranslateY() - r);
+            t.consume();
         });
-        setOnMouseReleased(event -> {
+        setOnMouseReleased((t) -> {
+            plantInfoLabel.setVisible(false);
+            Plant c = (Plant) (t.getSource()); //Finds out which plant it was
+            c.pX = c.getTranslateX(); //This is to save the x-coordinate for its new location.
+            c.pY = c.getTranslateY(); //This is to save the y-coordinate for its new location.
             text.setText(":)"); //When mouse released, plant looks happy again
         });
 
-        this.getChildren().addAll(circle, text);
+        this.getChildren().addAll(circle, text, plantInfoLabel);
+        this.setTranslateX(pX);
+        this.setTranslateY(pY);
     }
     // http://www.java2s.com/Tutorials/Java/JavaFX_How_to/Shape/Handle_Shape_drag_and_drop_events.htm
 
@@ -54,13 +75,6 @@ public class Plant extends StackPane {
     }
     public void setName(String name) {
         this.name = name;
-    }
-
-    public int getNumber() {
-        return number;
-    }
-    public void setNumber(int number) {
-        this.number = number;
     }
 
     public String getType() {
@@ -77,28 +91,20 @@ public class Plant extends StackPane {
         this.location = location;
     }
 
-    public double getX() {
-        return x;
-    }
-    public void setX(double x) {
-        this.x = x;
-    }
-    public double getY() {
-        return y;
-    }
-    public void setY(double y) {
-        this.y = y;
+    public double getpX() {
+        return pX;
     }
 
-    public double getR() {
-        return r;
-    }
-    public void setR(double r) {
-        this.r = r;
+    public void setpX(double pX) {
+        this.pX = pX;
     }
 
-    public void setColor(Color color) {
-        this.color = color;
+    public double getpY() {
+        return pY;
+    }
+
+    public void setpY(double pY) {
+        this.pY = pY;
     }
 }
 

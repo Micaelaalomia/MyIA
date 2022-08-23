@@ -73,5 +73,6 @@
       <ToolBar layoutY="-1.0" prefHeight="40.0" prefWidth="800.0" />
       <Button layoutX="482.0" layoutY="158.0" mnemonicParsing="false" onAction="#switchToDiaryScreen" prefHeight="51.0" prefWidth="220.0" text="My diary" />
       <Button fx:id="addPlantBtn" layoutX="482.0" layoutY="313.0" mnemonicParsing="false" onAction="#switchToAddPlantScreen" prefHeight="51.0" prefWidth="220.0" text="Add new plant" />
+      <Button layoutX="420.0" layoutY="462.0" mnemonicParsing="false" onAction="#saveBtnAction" prefHeight="25.0" prefWidth="50.0" text="save!" />
    </children>
 </AnchorPane>

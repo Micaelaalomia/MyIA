@@ -53,8 +53,38 @@ public class AddPlantController{
     //when save button is clicked, a new plant will be added to ObservableList.
     public void saveBtn(ActionEvent actionEvent) {
         if (App.plants.size() <= max_NumberOfPlants) { //Only 5 plants can be added
+
+            //Color.GREEN = 0x008000ff
+            //System.out.println(Color.PINK);0xffc0cbff
+            //System.out.println(Color.LAVENDER);0xe6e6faff
+            //System.out.println(Color.MISTYROSE);0xffe4e1ff
+            //System.out.println(Color.LIGHTYELLOW);0xffffe0ff
+            //System.out.println(Color.SKYBLUE);0x87ceebff
+            String color = "0x008000ff";
+            int newPlantIndex = App.plants.size()-1;
+            switch (newPlantIndex){
+                case 0:
+                    color = "0x87ceebff";
+                    break;
+                case 1:
+                    color = "0xffc0cbff";
+                    break;
+                case 2:
+                    color = "0xe6e6faff";
+                    break;
+                case 3:
+                    color = "0xffe4e1ff";
+                    break;
+                case 4:
+                    color = "0xffffe0ff";
+                    break;
+                case 5:
+                    color = "0x87ceebff";
+                    break;
+            }
+
             //adds new plant
-            App.plants.add(new Plant(pNameTxt.getText(), pTypeTxt.getText(), pLocationTxt.getText(), 10, Color.GREEN));
+            App.plants.add(new Plant(pNameTxt.getText(), pTypeTxt.getText(), pLocationTxt.getText(), 10,10, color));
         }
         // https://stackoverflow.com/questions/7080205/popup-message-boxes
         else{

@@ -40,7 +40,7 @@ public class DiaryScreenController{
 
     public void initialize(){
 
-        dateOptions.setCellValueFactory(new PropertyValueFactory<DayTime, String>("date"));
+        dateOptions.setCellValueFactory(new PropertyValueFactory<>("dateString"));
         dateTable.getColumns().add(dateOptions); //adds first column into table
         dateTable.setItems(App.days);
 
