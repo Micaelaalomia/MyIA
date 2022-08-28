@@ -18,8 +18,32 @@ public class MainScreenController {
     public AnchorPane mainPane;
     public Button addPlantBtn;
 
+
+    public void initialize() {
+        for (Plant p : App.plants) {
+            mainPane.getChildren().add(p); //gets each plant created and adds it to controller when app is ran
+        }
+
+        //when controller is initialized, it gets the planImage from a folder in the resources class.
+        planImage.setImage(new Image(getClass().getResourceAsStream("/images/planImage.png")));
+    }
+
+    public void saveBtnAction(ActionEvent actionEvent) {
+        for (Plant p : App.plants) {
+            System.out.println(p.getTranslateX());
+        }
+        //force save plants in case locations have been changed
+        Gson gson = new GsonBuilder().setPrettyPrinting().excludeFieldsWithoutExposeAnnotation().create();
+        try (FileWriter writer = new FileWriter("plants.json")) {
+            gson.toJson(App.plants, writer);
+            System.out.println("Saved.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void switchToScheduleScreen() throws IOException {
-       App.setRoot("ScheduleScreen");
+        App.setRoot("ScheduleScreen");
     }
 
     public void switchToDiaryScreen() throws IOException {
@@ -32,29 +56,6 @@ public class MainScreenController {
 
     public void switchToAddPlantScreen() throws IOException {
         App.setRoot("AddPlantScreen");
-    }
-
-    public void initialize(){
-        for (Plant p: App.plants) {
-          mainPane.getChildren().add(p); //gets each plant created and adds it to controller when app is ran
-        }
-
-        //when controller is initialized, it gets the planImage from a folder in the resources class.
-        planImage.setImage(new Image(getClass().getResourceAsStream("/images/planImage.png")));
-    }
-
-    public void saveBtnAction(ActionEvent actionEvent) {
-        for (Plant p: App.plants) {
-            System.out.println(p.getTranslateX());
-        }
-        //force save plants incase locations have been changed
-        Gson gson = new GsonBuilder().setPrettyPrinting().excludeFieldsWithoutExposeAnnotation().create();
-        try(FileWriter writer = new FileWriter("plants.json")){
-            gson.toJson(App.plants, writer);
-            System.out.println("Saved.");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 }
 

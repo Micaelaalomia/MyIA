@@ -7,12 +7,12 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="261.0" prefWidth="435.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.AddPlantController">
+<AnchorPane prefHeight="261.0" prefWidth="435.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.AddPlantController">
     <Label layoutX="228.0" layoutY="72.0" text="Name: " />
     <TextField fx:id="pNameTxt" layoutX="275.0" layoutY="68.0" prefHeight="25.0" prefWidth="121.0" />
     <Button defaultButton="true" layoutX="328.0" layoutY="202.0" mnemonicParsing="false" onAction="#saveBtn" prefHeight="25.0" prefWidth="60.0" text="Save" />
     <Label layoutX="228.0" layoutY="141.0" text="Location:" />
-    <Button cancelButton="true" layoutX="217.0" layoutY="202.0" mnemonicParsing="false" onAction="#switchToMainScreen" prefHeight="25.0" prefWidth="101.0" text="Cancel / back" />
+    <Button cancelButton="true" layoutX="217.0" layoutY="202.0" mnemonicParsing="false" onAction="#switchToMainScreen" prefHeight="25.0" prefWidth="101.0" text="Back" />
    <Label layoutX="261.0" layoutY="23.0" text="New plant">
       <font>
          <Font name="Consolas" size="23.0" />
