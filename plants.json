@@ -3,16 +3,16 @@
     "name": "Fred",
     "type": "Cactus",
     "location": "Kitchen",
-    "pX": 10.0,
-    "pY": 10.0,
+    "pX": 334.0,
+    "pY": 104.0,
     "color": "0x008000ff"
   },
   {
     "name": "fred",
     "type": "cactus",
     "location": "new",
-    "pX": 10.0,
-    "pY": 10.0,
+    "pX": 282.0,
+    "pY": 188.0,
     "color": "0x87ceebff"
   }
 ]

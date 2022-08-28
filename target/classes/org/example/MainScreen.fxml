@@ -70,16 +70,23 @@
             <Font name="Yu Gothic Medium" size="11.0" />
          </font>
       </Label>
-      <ToolBar layoutY="-1.0" prefHeight="40.0" prefWidth="800.0" />
+      <ToolBar layoutY="-1.0" prefHeight="40.0" prefWidth="800.0">
+         <items>
+            <Label prefHeight="36.0" prefWidth="612.0" text="                                                                        The Plant Keeper">
+               <font>
+                  <Font name="Yu Gothic Medium" size="16.0" />
+               </font>
+            </Label>
+         </items></ToolBar>
       <Button layoutX="482.0" layoutY="158.0" mnemonicParsing="false" onAction="#switchToDiaryScreen" prefHeight="51.0" prefWidth="220.0" text="My diary" />
       <Button fx:id="addPlantBtn" layoutX="482.0" layoutY="313.0" mnemonicParsing="false" onAction="#switchToAddPlantScreen" prefHeight="51.0" prefWidth="220.0" text="Add new plant" />
-      <Button layoutX="133.0" layoutY="451.0" mnemonicParsing="false" onAction="#saveBtnAction" prefHeight="25.0" prefWidth="50.0" text="SAVE" />
+      <Button layoutX="134.0" layoutY="452.0" mnemonicParsing="false" onAction="#saveBtnAction" prefHeight="25.0" prefWidth="50.0" text="SAVE" />
       <Label layoutX="56.0" layoutY="445.0" prefHeight="36.0" prefWidth="86.0" text="Don't forget to">
          <font>
             <Font name="Yu Gothic Medium" size="11.0" />
          </font>
       </Label>
-      <Label layoutX="190.0" layoutY="446.0" prefHeight="36.0" prefWidth="117.0" text="the relocated plants!">
+      <Label layoutX="190.0" layoutY="446.0" prefHeight="36.0" prefWidth="289.0" text="the relocated plants before closing The Plant Keeper!">
          <font>
             <Font name="Yu Gothic Medium" size="11.0" />
          </font>

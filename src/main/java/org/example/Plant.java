@@ -34,14 +34,13 @@ public class Plant extends StackPane {
         circle.setStrokeWidth(1);
         Text text = new Text(":)"); //Plant starts off happy
 
-        this.setCursor(Cursor.HAND);
-
         Label plantInfoLabel = new Label(this.getName() + "\n " + this.getType()+ "\n " + this.getLocation());
         plantInfoLabel.setStyle("-fx-background-color: #f4f4f4;-fx-border-color: #000000;");
 
         plantInfoLabel.setTranslateX(25);
         plantInfoLabel.setVisible(false);
 
+        this.setCursor(Cursor.HAND);
         setOnMousePressed((t) -> {
             Plant c = (Plant) (t.getSource()); //Finds out which plant it was
             text.setText(":0"); //When mouse pressed, plant looks shocked
