@@ -1,12 +1,12 @@
 package org.example;
 
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.Reader;
+import java.io.*;
 import java.net.MalformedURLException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import javafx.event.ActionEvent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableRow;
@@ -41,7 +41,10 @@ public class DiaryScreenController{
     public void initialize(){
 
         dateOptions.setCellValueFactory(new PropertyValueFactory<>("dateString"));
+        dateOptions.setPrefWidth(204);
         dateTable.getColumns().add(dateOptions); //adds first column into table
+
+
         dateTable.setItems(App.days);
 
         dateTable.setRowFactory(rowClick ->{ //when row is clicked, something happens
@@ -93,5 +96,16 @@ public class DiaryScreenController{
         App.days.add(new DayTime(LocalDateTime.now(), notesTxt.getText()));       //adds new day
         System.out.println(App.days.get(0));
 
+    }
+
+    public void saveBtnAction(ActionEvent actionEvent) {
+        //save notes in case changed
+        Gson gson = new GsonBuilder().setPrettyPrinting().excludeFieldsWithoutExposeAnnotation().create();
+        try (FileWriter writer = new FileWriter("diary.json")) {
+            gson.toJson(App.days, writer);
+            System.out.println("Saved.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

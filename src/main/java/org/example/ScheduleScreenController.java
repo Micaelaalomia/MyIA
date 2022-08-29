@@ -7,7 +7,7 @@ import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
 import javafx.stage.Window;
 
-public class ScheduleScreenController extends MainScreenController{
+public class ScheduleScreenController{
 
     public void switchToDiaryScreen(ActionEvent actionEvent) throws IOException {
         App.setRoot("DiaryScreen");

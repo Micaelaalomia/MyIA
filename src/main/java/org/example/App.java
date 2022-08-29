@@ -58,7 +58,8 @@ public class App extends Application {
         Gson gson = new GsonBuilder().create();
         try(Reader reader = new FileReader("plants.json")){
             //convert JSON file to Java object
-            ArrayList<PlantTemp> imports = gson.fromJson(reader, new TypeToken<ArrayList<PlantTemp>>(){ //each item in JSON file will be considered to be a plant
+            ArrayList<PlantTemp> imports = gson.fromJson(reader, new TypeToken<ArrayList<PlantTemp>>(){
+                //each item in JSON file will be considered to be a plant
             }.getType());
             App.plantsTemp = FXCollections.observableArrayList(imports); //temporary ArrayList
 

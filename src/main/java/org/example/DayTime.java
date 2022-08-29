@@ -2,7 +2,6 @@ package org.example;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 
 public class DayTime {
 
@@ -22,14 +21,6 @@ public class DayTime {
         return date;
     }
 
-    public String getDateString() {
-        return dateString;
-    }
-
-    public void setDateString(String dateString) {
-        this.dateString = dateString;
-    }
-
     public void setDate(LocalDateTime date) {
         this.date = date;
     }
@@ -46,4 +37,5 @@ public class DayTime {
     public String toString() {
         return dateString;
     }
+
 }

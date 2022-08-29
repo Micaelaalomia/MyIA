@@ -48,8 +48,6 @@ public class AddPlantController{
         });
     }
 
-
-
     //when save button is clicked, a new plant will be added to ObservableList.
     public void saveBtn(ActionEvent actionEvent) {
         if (App.plants.size() <= max_NumberOfPlants) { //Only 5 plants can be added
