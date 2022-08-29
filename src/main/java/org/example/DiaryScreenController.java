@@ -3,15 +3,11 @@ package org.example;
 import java.io.*;
 import java.net.MalformedURLException;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import javafx.event.ActionEvent;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableRow;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -20,6 +16,8 @@ import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Window;
 import org.apache.commons.io.FileUtils;
+
+import javax.swing.*;
 
 public class DiaryScreenController{
 
@@ -44,7 +42,6 @@ public class DiaryScreenController{
         dateOptions.setPrefWidth(204);
         dateTable.getColumns().add(dateOptions); //adds first column into table
 
-
         dateTable.setItems(App.days);
 
         dateTable.setRowFactory(rowClick ->{ //when row is clicked, something happens
@@ -60,14 +57,12 @@ public class DiaryScreenController{
         });
     }
 
-
-
     public void selectImageBtn(ActionEvent actionEvent) {
 
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Choose a file");
         File file = fileChooser.showOpenDialog(stage);
-        File dest = new File("Photos\\"+"timeWithSeconds.jpg");
+        File dest = new File("Photos\\"+"image.jpg");
         try {
             FileUtils.copyFile(file, dest);
         } catch (IOException e) {
@@ -88,14 +83,12 @@ public class DiaryScreenController{
             imageHolder.setFitHeight(200);
             imageHolder.setPreserveRatio(true);
             imageVBox.getChildren().add(imageHolder);
-
         }
     }
 
     public void addDayBtn(ActionEvent actionEvent) {
         App.days.add(new DayTime(LocalDateTime.now(), notesTxt.getText()));       //adds new day
         System.out.println(App.days.get(0));
-
     }
 
     public void saveBtnAction(ActionEvent actionEvent) {

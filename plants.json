@@ -1,2 +1,50 @@
 [
+  {
+    "name": "bob",
+    "type": "cactus",
+    "location": "kitchen",
+    "pX": 10.0,
+    "pY": 10.0,
+    "color": "0x008000ff"
+  },
+  {
+    "name": "fred",
+    "type": "cactus",
+    "location": "kitchen",
+    "pX": 10.0,
+    "pY": 10.0,
+    "color": "0x87ceebff"
+  },
+  {
+    "name": "planty",
+    "type": "cactus",
+    "location": "living room",
+    "pX": 113.0,
+    "pY": 334.0,
+    "color": "0xffc0cbff"
+  },
+  {
+    "name": "green",
+    "type": "cactus",
+    "location": "living room",
+    "pX": 261.0,
+    "pY": 103.0,
+    "color": "0xe6e6faff"
+  },
+  {
+    "name": "freddy",
+    "type": "cactus",
+    "location": "living room",
+    "pX": 180.0,
+    "pY": 135.0,
+    "color": "0xffe4e1ff"
+  },
+  {
+    "name": "rose",
+    "type": "cactus",
+    "location": "living room",
+    "pX": 163.0,
+    "pY": 211.0,
+    "color": "0xffffe0ff"
+  }
 ]

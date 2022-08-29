@@ -48,63 +48,85 @@ public class AddPlantController{
         });
     }
 
+
     //when save button is clicked, a new plant will be added to ObservableList.
     public void saveBtn(ActionEvent actionEvent) {
-        if (App.plants.size() <= max_NumberOfPlants) { //Only 5 plants can be added
-
-            //Color.GREEN = 0x008000ff
-            //System.out.println(Color.PINK);0xffc0cbff
-            //System.out.println(Color.LAVENDER);0xe6e6faff
-            //System.out.println(Color.MISTYROSE);0xffe4e1ff
-            //System.out.println(Color.LIGHTYELLOW);0xffffe0ff
-            //System.out.println(Color.SKYBLUE);0x87ceebff
-            String color = "0x008000ff";
-            int newPlantIndex = App.plants.size()-1;
-            switch (newPlantIndex){
-                case 0:
-                    color = "0x87ceebff";
-                    break;
-                case 1:
-                    color = "0xffc0cbff";
-                    break;
-                case 2:
-                    color = "0xe6e6faff";
-                    break;
-                case 3:
-                    color = "0xffe4e1ff";
-                    break;
-                case 4:
-                    color = "0xffffe0ff";
-                    break;
-                case 5:
-                    color = "0x87ceebff";
-                    break;
+        boolean isValid = false;
+        while (isValid == false) {
+            if (pNameTxt.getText().equals("") || pTypeTxt.getText().equals("") || pLocationTxt.getText().equals("")) {
+                // create a alert
+                Alert a = new Alert(Alert.AlertType.NONE);
+                // action event
+                // set alert type
+                a.setAlertType(Alert.AlertType.CONFIRMATION);
+                a.setContentText("Blank spaces are not allowed. Try again.");
+                // show the dialog
+                a.show();
+                break;
+            } else {
+                isValid = true;
             }
-
-            //adds new plant
-            App.plants.add(new Plant(pNameTxt.getText(), pTypeTxt.getText(), pLocationTxt.getText(), 10,10, color));
         }
-        // https://stackoverflow.com/questions/7080205/popup-message-boxes
-        else{
-            // create a alert
-            Alert a = new Alert(Alert.AlertType.NONE);
-            // action event
+
+        if (isValid == true){
+            if (App.plants.size() <= max_NumberOfPlants) { //Only 5 plants can be added
+                // Color.GREEN = 0x008000ff
+                //System.out.println(Color.PINK);0xffc0cbff
+                //System.out.println(Color.LAVENDER);0xe6e6faff
+                //System.out.println(Color.MISTYROSE);0xffe4e1ff
+                //System.out.println(Color.LIGHTYELLOW);0xffffe0ff
+                //System.out.println(Color.SKYBLUE);0x87ceebff
+                String color = "0x008000ff";
+                int newPlantIndex = App.plants.size() - 1;
+                switch (newPlantIndex) {
+                    case 0:
+                        color = "0x87ceebff";
+                        break;
+                    case 1:
+                        color = "0xffc0cbff";
+                        break;
+                    case 2:
+                        color = "0xe6e6faff";
+                        break;
+                    case 3:
+                        color = "0xffe4e1ff";
+                        break;
+                    case 4:
+                        color = "0xffffe0ff";
+                        break;
+                    case 5:
+                        color = "0x87ceebff";
+                        break;
+                }
+                //adds new plant
+                App.plants.add(new Plant(pNameTxt.getText(), pTypeTxt.getText(), pLocationTxt.getText(), 10, 10, color));
+
+            } else {
+                // create a alert
+                Alert a = new Alert(Alert.AlertType.NONE);
+                // action event
                 // set alert type
                 a.setAlertType(Alert.AlertType.CONFIRMATION);
                 a.setContentText("Ups...You’ve reached a maximum of 6 plants.");
 
                 // show the dialog
                 a.show();
-        }
+            }
+            // https://stackoverflow.com/questions/7080205/popup-message-boxes
 
-        Gson gson = new GsonBuilder().setPrettyPrinting().excludeFieldsWithoutExposeAnnotation().create();
-        try(FileWriter writer = new FileWriter("plants.json")){
-            gson.toJson(App.plants, writer);
-            System.out.println("Saved.");
-        } catch (IOException e) {
-            e.printStackTrace();
+            Gson gson = new GsonBuilder().setPrettyPrinting().excludeFieldsWithoutExposeAnnotation().create();
+            try (FileWriter writer = new FileWriter("plants.json")) {
+                gson.toJson(App.plants, writer);
+                System.out.println("Saved.");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            // https://mkyong.com/java/how-do-convert-java-object-to-from-json-format-gson-api/
+
         }
-        // https://mkyong.com/java/how-do-convert-java-object-to-from-json-format-gson-api/
     }
 }
+
+
+
 

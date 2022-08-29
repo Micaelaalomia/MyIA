@@ -19,6 +19,7 @@ public class Plant extends StackPane {
     @Expose String location;
     @Expose double pX; @Expose double pY; //Variables for the constructor of a circle class.
     @Expose String color;
+    //com.google.gson.annotations
 
     //The constructor below allows creating a plant.
     public Plant(String name, String type, String location, double pX, double pY, String color) {
